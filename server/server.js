@@ -11,10 +11,11 @@ app.use(bodyParser.json());
 massive(process.env.CONNECTION_STRING).then(db => {
     console.log('Database reporting for duty')
     app.set('db', db)
-}).catch(error=>console.log('Is something burning???', error))
+}).catch(error=>console.log('Is something burning???', error));
 
 
 
-app.get('/api/products', ctrl.read)
+app.get('/api/products', ctrl.getAllProducts);
+app.get('/api/cart', ctrl.getCart);
 
-app.listen(()=>console.log(`Lending an ear on ${port}`))
+app.listen(port,()=>console.log(`Lending an ear on ${port}`));

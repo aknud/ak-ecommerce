@@ -5,7 +5,7 @@ import Products from './Components/Products';
 
 export default (
     <Switch>
+        <Route path="/cart" component={Cart}/>
         <Route exact path="/" component={Products}/>
-        <Route exact path="/cart" component={Cart}/>
     </Switch>
 )

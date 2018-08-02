@@ -4,11 +4,16 @@ const initialState = {
 }
 
 const GET_PRODUCT = "GET_PRODUCT";
+const GET_CART = "GET_CART";
 
 export default function reducer(state= initialState, action) {
     switch (action.type){
         case GET_PRODUCT:
+        console.log('payload on reducer',action.payload)
             return Object.assign({}, state, {products: action.payload})
+        case GET_CART:
+        console.log('cart on reducer', action.payload)
+            return Object.assign({}, state, {cart: action.payload})
         default: return state;
     }
 }
@@ -17,5 +22,11 @@ export const getProduct = (product) => {
     return {
         type: GET_PRODUCT,
         payload: product
+    }
+}
+export const getCart = (cart) => {
+    return {
+        type: GET_CART,
+        payload: cart
     }
 }

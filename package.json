@@ -2,8 +2,10 @@
   "name": "ak-ecommerce",
   "version": "0.1.0",
   "private": true,
+  "proxy": "http://localhost:3018",
   "main": "server/server.js",
   "dependencies": {
+    "axios": "^0.18.0",
     "body-parser": "^1.18.3",
     "dotenv": "^6.0.0",
     "express": "^4.16.3",
@@ -19,6 +21,5 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
-  },
-  "proxy": "http://localhost:3018"
+  }
 }
