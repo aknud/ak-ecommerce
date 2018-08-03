@@ -6,9 +6,10 @@ create table Product (
 );
 
 create table Cart (
-    cart_id integer primary key,
+    cart_id serial primary key,
     quantity integer,
-    product_id integer references Product (product_id)
+    product_id integer references Product (product_id),
+	user_id integer
 );
 
 -- Dummy Data for Product table

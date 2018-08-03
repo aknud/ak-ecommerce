@@ -14,8 +14,11 @@ massive(process.env.CONNECTION_STRING).then(db => {
 }).catch(error=>console.log('Is something burning???', error));
 
 
-
+app.post('/api/add', ctrl.addToCart);
 app.get('/api/products', ctrl.getAllProducts);
 app.get('/api/cart', ctrl.getCart);
+app.put('/api/update/:id', ctrl.updateQuantity);
+app.delete('/api/delete/:id', ctrl.deleteProduct);
+app.delete(`/api/emptycart/:id`, ctrl.emptyCart);
 
 app.listen(port,()=>console.log(`Lending an ear on ${port}`));
